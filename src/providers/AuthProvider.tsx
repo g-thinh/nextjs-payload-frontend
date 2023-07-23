@@ -26,7 +26,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({
 
   const login = useCallback<Login>(async (args) => {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/users/login`,
+      `${process.env.NEXT_PUBLIC_PAYLOAD_SERVER_URL}/api/users/login`,
       {
         method: "POST",
         body: JSON.stringify(args),
@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({
 
   const logout = useCallback(async () => {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/users/logout`,
+      `${process.env.NEXT_PUBLIC_PAYLOAD_SERVER_URL}/api/users/logout`,
       {
         method: "POST",
         credentials: "include",
@@ -64,7 +64,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({
   useEffect(() => {
     const fetchUser = async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/users/me`,
+        `${process.env.NEXT_PUBLIC_PAYLOAD_SERVER_URL}/api/users/me`,
         {
           credentials: "include",
         }
