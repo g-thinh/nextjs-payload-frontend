@@ -12,7 +12,7 @@ export const Header = () => {
             <Link href="/">Home</Link>
           </li>
           {user ? (
-            <p>Hello, {user.name}</p>
+            <p>Hello, {user?.name}</p>
           ) : (
             <li>
               <Link href="/signin">Sign In</Link>
